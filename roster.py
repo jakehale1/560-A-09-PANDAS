@@ -1,13 +1,16 @@
-# https://goheels.com/sports/mens-basketball/roster
 import pandas as pd
 
-roster = ["Bacot", "Davis", "Cadeau"]
 player = {
-    "Last Name": roster,
+    "Last Name": ["Bacot", "Davis", "Cadeau"],
     "First Name": ["Armando", "RJ", "Elliot"],
-    "Height": [83, 72, 73],  # Corrected the height values
-    "Weight": [240, 180, 180]
+    "height": [83, 72, 73],  
+    "weight": [249, 180, 180]  
 }
 
 data = pd.DataFrame(player)
 
+data["bmi"] = (data["weight"] / 2.205) / ((data["height"] / 39.37) ** 2)
+
+print(data)
+
+data.to_csv("bmi.csv")
