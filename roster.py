@@ -1,10 +1,13 @@
 # https://goheels.com/sports/mens-basketball/roster
 import pandas as pd
 
-roster = {"RJ Davis", "Armando Bacot", "Seth Trimble"}
+roster = ["Bacot", "Davis", "Cadeau"]
+player = {
+    "Last Name": roster,
+    "First Name": ["Armando", "RJ", "Elliot"],
+    "Height": [83, 72, 73],  # Corrected the height values
+    "Weight": [240, 180, 180]
+}
 
-data = pd.DataFrame(roster, columns=["Player"])
-
-print(data)
-
+data = pd.DataFrame(player)
 
